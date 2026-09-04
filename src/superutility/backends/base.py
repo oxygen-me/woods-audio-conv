@@ -1,0 +1,6 @@
+from pathlib import Path
+from typing import Protocol, Sequence
+
+class MediaBackend(Protocol):
+    def build_args(self, operation) -> Sequence[str]: ...
+    def run(self, args: Sequence[str], cwd: Path | None = None): ...

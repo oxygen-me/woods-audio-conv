@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimedia-superutility"
+version = "0.1.0"
+description = "A local-first multimedia utility for Windows."
+readme = "README.md"
+requires-python = "==3.14.6"
+license = { file = "LICENSE" }
+dependencies = [
+    "PySide6==6.11.2",
+    "av==18.1.0",
+]
+
+[project.scripts]
+superutility = "superutility.__main__:main"
+
+[project.optional-dependencies]
+build = [
+    "Nuitka>=4.2,<4.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
